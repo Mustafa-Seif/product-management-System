@@ -1,0 +1,181 @@
+* {
+    margin: 0;
+    padding: 0;
+
+
+
+}
+
+
+
+body {
+    text-transform: capitalize;
+
+
+}
+
+.header {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.inputs {
+    /* border: solid 1px red; */
+    margin: 20px;
+
+}
+
+input {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: solid 1px rgb(23, 56, 202);
+    background-color: #fff;
+    color: #000;
+    margin: 55px 0;
+    padding: 20px 15px;
+}
+
+input::placeholder {
+    color: #000 !important;
+}
+
+input:focus {
+    background-color: #037cee6b;
+    color: #000;
+
+
+    transform: scale(1.01);
+}
+
+.price input {
+    width: 20%;
+    margin: 10px 0;
+}
+
+#total {
+    background-color: rgb(214, 16, 16);
+    color: #000;
+    border-radius: 2px;
+    padding: 12px 10px;
+}
+
+#total::before {
+    content: "total : ";
+}
+
+#category {
+    margin: 10px 0;
+    color: #000;
+
+}
+
+#category::placeholder {
+    color: rgb(185, 14, 14);
+    background-color: #000;
+
+}
+
+
+button {
+    width: 100%;
+    height: 30px;
+    border: none;
+    background-color: rgb(3, 124, 238);
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 10px 0px;
+    transition: 300ms;
+}
+
+button:hover {
+    background-color: rgb(3, 124, 238);
+    letter-spacing: 1px;
+}
+
+
+.outputs {
+    margin: 20px;
+    /* border: solid 1px black; */
+}
+
+#submit {
+    background-color: rgb(3, 124, 238);
+    color: #fff;
+    border-radius: 20px;
+}
+
+.btnSearch {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#search {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.btnSearch button {
+    width: 45%;
+    height: 30px;
+    border: none;
+    background-color: rgb(3, 124, 238);
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+    /* margin: 10px 0px; */
+    transition: 500ms;
+}
+
+table {
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+
+    text-align: center;
+
+
+}
+
+table th {
+    text-transform: uppercase;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.801);
+}
+
+table tr {
+    max-height: 200px;
+    text-transform: uppercase;
+}
+
+table tr button {
+    width: 80px;
+    border-radius: 20px;
+
+
+}
+
+th,
+td {
+    padding: 10px;
+}
+
+#clear button {
+    margin-top: 10px;
+    margin-left: auto;
+    background-color: rgb(3, 124, 238);
+    color: #fff;
+    border-radius: 20px;
+
+}
+
+#clear button:hover,
+#delete {
+    background-color: rgb(214, 16, 16);
+}
+
+
+tr td {
+    border-bottom: solid 1px #000;
+}
