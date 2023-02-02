@@ -49,6 +49,7 @@ if (localStorage.product != null) {
 } else {
   dataPro = [];
 }
+x="AAA";
 
 function handleSubmit() {
     const newPro = {
@@ -178,6 +179,8 @@ tmp= i;
 }
 //  search--------------------------------------------------------------------
 let searchMood = "title";
+document.getElementById("searchTitle").style.backgroundColor="red"
+document.getElementById("searchCategory").style.backgroundColor="#037CEE"
 
 function getsearchMood(id) {
   let search = document.getElementById("search");
@@ -198,7 +201,7 @@ function search(value) {
   let table = "";
   if (searchMood === "title") {
     for (let i = 0; i < dataPro.length; i++) {
-      if (dataPro[i].title.includes(value)) {
+      if (dataPro[i].title.toLowerCase().includes(value.toLowerCase())) {
         table += `
                 <tr >
                     <td> ${i + 1}</td>
@@ -217,7 +220,7 @@ function search(value) {
     }
   } else {
     for (let i = 0; i < dataPro.length; i++) {
-        if (dataPro[i].category.includes(value)) {
+        if (dataPro[i].category.toLowerCase().includes(value.toLowerCase())) {
           table += `
                   <tr >
                       <td> ${i + 1}</td>
