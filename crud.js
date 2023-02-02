@@ -25,6 +25,7 @@ const category = document.getElementById("category");
 const submit = document.getElementById("submit");
 const total = document.getElementById("total");
 
+
 // get total
 function getTotal() {
   if (price.value >= 1) {
@@ -49,8 +50,7 @@ if (localStorage.product != null) {
   dataPro = [];
 }
 
-submit.onclick = function () {
- 
+function handleSubmit() {
     const newPro = {
       title: title.value,
       price: price.value,
@@ -234,3 +234,8 @@ function search(value) {
 
   document.getElementById("tbody").innerHTML = table;
 }
+
+
+
+
+
