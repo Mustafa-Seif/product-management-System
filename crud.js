@@ -194,7 +194,6 @@ function getsearchMood(id) {
     document.getElementById("searchTitle").style.backgroundColor="#037CEE"
   }
   search.focus();
-  search.value = "";
   showData();
 }
 function search(value) {
