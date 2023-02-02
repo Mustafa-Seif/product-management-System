@@ -183,8 +183,12 @@ function getsearchMood(id) {
   let search = document.getElementById("search");
   if (id === "searchTitle") {
     searchMood = "title";
+    document.getElementById("searchTitle").style.backgroundColor="red"
+    document.getElementById("searchCategory").style.backgroundColor="#037CEE"
   } else {
     searchMood = "category";
+    document.getElementById("searchCategory").style.backgroundColor="red"
+    document.getElementById("searchTitle").style.backgroundColor="#037CEE"
   }
   search.focus();
   search.value = "";
