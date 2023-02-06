@@ -26,24 +26,24 @@
         <header class="header mt-5">
             <h1 class="text-light">product management system</h1>
         </header>
-        <form class="inputs needs-validation" onsubmit="handleSubmit()">
-            <input type="text" id="title" placeholder="title" class="form-control"  required>
+        <div class="inputs needs-validation">
+            <input type="text" id="title" placeholder="title" class="form-control"  >
             <div class="valid-feedback">
                 Looks good!
               </div>
             <div class="price ">
-                <input onkeyup="getTotal()" type="number" placeholder="price" id="price" required>
+                <input onkeyup="getTotal()" type="number" placeholder="price" id="price" >
                 <input onkeyup="getTotal()" type="number" placeholder="taxes" id="taxes">
                 <input onkeyup="getTotal()" type="number" placeholder="ads" id="ads">
                 <input onkeyup="getTotal()" type="number" placeholder="discount" id="discount">
                 <small id="total" onkeyup="getTotal()"></small>
             </div>
             <div>
-                <input type="number" id="count" placeholder="count" class="form-control"  required>
-                <input type="text" id="category" placeholder="category" class="form-control"  required>
-                <button type="submit" id="submit">Creat</button>
+                <input type="number" id="count" placeholder="count" class="form-control"  >
+                <input type="text" id="category" placeholder="category" class="form-control" >
+                <button type="submit" id="submit" onclick="handleCreate()">Creat</button>
             </div>
-        </form>
+        </div>
         <div class="outputs">
             <div class="searchBlock">
                 <input type="search" id="search" placeholder="search" onkeyup="search(this.value)">

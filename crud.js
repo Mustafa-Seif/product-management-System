@@ -34,7 +34,7 @@ function getTotal() {
     total.style.backgroundColor = "#10f12b";
     // console.log(price.value)
   } else {
-    total.innerHTML = " ";
+    total.innerHTML = "";
     total.style.backgroundColor = "#f03304";
   }
 }
@@ -49,9 +49,8 @@ if (localStorage.product != null) {
 } else {
   dataPro = [];
 }
-x="AAA";
-
-function handleSubmit() {
+// CREATE NEW PRODUCT 
+function handleCreate() {
     const newPro = {
       title: title.value,
       price: price.value,
@@ -87,8 +86,6 @@ function handleSubmit() {
     getTotal();
     showData();
     clearData();
-
-  // ----------------------
   // turn off get count
   count.style.display = "block";
   // ----------------------
@@ -97,6 +94,7 @@ function handleSubmit() {
   statusApp = "create";
   localStorage.setItem("product", JSON.stringify(dataPro));
   }
+    
 };
 
 function clearData() {
@@ -115,7 +113,7 @@ function showData() {
   let table = "";
   for (let i = 0; i < dataPro.length; i++) {
     table += `
-                    <tr >
+                   <tr >
                         <td> ${i + 1}</td>
                         <td>${dataPro[i].title}</td>
                         <td>${dataPro[i].price}</td>
@@ -149,7 +147,7 @@ function clearAll() {
   localStorage.clear();
   dataPro.splice(0);
   showData();
-  clear.innerHTML = ` `;
+  clear.innerHTML ="";
 }
 //   delete all---
 
