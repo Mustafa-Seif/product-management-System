@@ -25,7 +25,6 @@ const category = document.getElementById("category");
 const submit = document.getElementById("submit");
 const total = document.getElementById("total");
 
-
 // get total
 function getTotal() {
   if (price.value >= 1) {
@@ -49,20 +48,21 @@ if (localStorage.product != null) {
 } else {
   dataPro = [];
 }
-// CREATE NEW PRODUCT 
+// CREATE NEW PRODUCT
 function handleCreate() {
-    const newPro = {
-      title: title.value,
-      price: price.value,
-      taxes: taxes.value,
-      ads: ads.value,
-      discount: discount.value,
-      total: total.innerHTML,
-      count: count.value,
-      category: category.value,
-    };
-    if (statusApp === "create") {
-    // to repeat count
+  const newPro = {
+    title: title.value,
+    price: price.value,
+    taxes: taxes.value,
+    ads: ads.value,
+    discount: discount.value,
+    total: total.innerHTML,
+    count: count.value,
+    category: category.value,
+  };
+  if (statusApp === "create") {
+    if ( title.value && price.value && count.value) {
+      // to repeat count
     if (newPro.count > 1) {
       for (let i = 0; i < newPro.count; i++) {
         dataPro.push(newPro);
@@ -81,21 +81,22 @@ function handleCreate() {
     // turn on input get count
     count.style.display = "block";
     // ----------------------
+    }
+    
   } else if (statusApp === "update") {
-    dataPro[tmp]=newPro;
+    dataPro[tmp] = newPro;
     getTotal();
     showData();
     clearData();
-  // turn off get count
-  count.style.display = "block";
-  // ----------------------
-  submit.innerHTML = "Create";
-  //   CHANGE STATUS APP
-  statusApp = "create";
-  localStorage.setItem("product", JSON.stringify(dataPro));
+    // turn off get count
+    count.style.display = "block";
+    // ----------------------
+    submit.innerHTML = "Create";
+    //   CHANGE STATUS APP
+    statusApp = "create";
+    localStorage.setItem("product", JSON.stringify(dataPro));
   }
-    
-};
+}
 
 function clearData() {
   price.value = "";
@@ -114,7 +115,7 @@ function showData() {
   for (let i = 0; i < dataPro.length; i++) {
     table += `
                    <tr >
-                        <td> ${i + 1}</td>
+                        <td scope="row"> ${i + 1}</td>
                         <td>${dataPro[i].title}</td>
                         <td>${dataPro[i].price}</td>
                         <td>${dataPro[i].taxes}</td>
@@ -147,13 +148,13 @@ function clearAll() {
   localStorage.clear();
   dataPro.splice(0);
   showData();
-  clear.innerHTML ="";
+  clear.innerHTML = "";
 }
 //   delete all---
 
 // update the data
 function update(i) {
-  scroll({top:0})
+  scroll({ top: 0 });
   //   up the data
   title.value = dataPro[i].title;
   price.value = dataPro[i].price;
@@ -172,25 +173,25 @@ function update(i) {
   submit.innerHTML = "Update";
   //   CHANGE STATUS APP
   statusApp = "update";
-//   tem == i 
-tmp= i;
+  //   tem == i
+  tmp = i;
 }
 //  search--------------------------------------------------------------------
 let searchMood = "title";
 
-document.getElementById("searchTitle").style.backgroundColor="red"
-document.getElementById("searchCategory").style.backgroundColor="#037CEE"
+document.getElementById("searchTitle").style.backgroundColor = "red";
+document.getElementById("searchCategory").style.backgroundColor = "#037CEE";
 
 function getsearchMood(id) {
   let search = document.getElementById("search");
   if (id === "searchTitle") {
     searchMood = "title";
-    document.getElementById("searchTitle").style.backgroundColor="red"
-    document.getElementById("searchCategory").style.backgroundColor="#037CEE"
+    document.getElementById("searchTitle").style.backgroundColor = "red";
+    document.getElementById("searchCategory").style.backgroundColor = "#037CEE";
   } else {
     searchMood = "category";
-    document.getElementById("searchCategory").style.backgroundColor="red"
-    document.getElementById("searchTitle").style.backgroundColor="#037CEE"
+    document.getElementById("searchCategory").style.backgroundColor = "red";
+    document.getElementById("searchTitle").style.backgroundColor = "#037CEE";
   }
   search.focus();
   showData();
@@ -218,8 +219,8 @@ function search(value) {
     }
   } else {
     for (let i = 0; i < dataPro.length; i++) {
-        if (dataPro[i].category.toLowerCase().includes(value.toLowerCase())) {
-          table += `
+      if (dataPro[i].category.toLowerCase().includes(value.toLowerCase())) {
+        table += `
                   <tr >
                       <td> ${i + 1}</td>
                       <td>${dataPro[i].title}</td>
@@ -233,14 +234,9 @@ function search(value) {
                       <td><button id="delete" onclick="removeItem(${i})" >delete</button></td>
                   </tr>
               `;
-        }
       }
+    }
   }
 
   document.getElementById("tbody").innerHTML = table;
 }
-
-
-
-
-

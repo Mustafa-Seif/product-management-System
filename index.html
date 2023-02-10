@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,7 +19,6 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
     <div class="container">
         <header class="header mt-5">
@@ -32,7 +30,7 @@
                 Looks good!
               </div>
             <div class="price ">
-                <input onkeyup="getTotal()" type="number" placeholder="price" id="price" >
+                <input onkeyup="getTotal()" type="number" placeholder="price" id="price">
                 <input onkeyup="getTotal()" type="number" placeholder="taxes" id="taxes">
                 <input onkeyup="getTotal()" type="number" placeholder="ads" id="ads">
                 <input onkeyup="getTotal()" type="number" placeholder="discount" id="discount">
@@ -53,24 +51,25 @@
                 </div>
             </div>
             <div id="clear"></div>
-            <table>
-                <tr>
-                    <th>id</th>
-                    <th>title</th>
-                    <th>price</th>
-                    <th>taxes</th>
-                    <th>ads</th>
-                    <th>discount</th>
-                    <th>total</th>
-                    <th>category</th>
-                    <th>update</th>
-                    <th>delete</th>
-                </tr>
+            <table class="table table-bordered table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">title</th>
+                    <th scope="col">price</th>
+                    <th scope="col">taxes</th>
+                    <th scope="col">ads</th>
+                    <th scope="col">discount</th>
+                    <th scope="col">total</th>
+                    <th scope="col">category</th>
+                    <th scope="col">update</th>
+                    <th scope="col">delete</th>
+                  </tr>
+                </thead>
                 <tbody id="tbody">
                 </tbody>
-            </table>
+              </table>
         </div>
-    </div>
 </body>
-
 </html>
+
